@@ -1,0 +1,162 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+.title{
+font-weight: lighter;
+}
+
+.logo-container{
+    display: flex;
+    justify-content: center;
+}
+
+.jh{
+    width: 90px;
+}
+
+.digital{
+    width: 100px;   
+}
+
+.nav-container{
+  display: flex;
+  justify-content: center;
+}
+
+li{
+  list-style-type: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: rgb(25, 137, 21);
+  color: white;
+}
+
+li:hover{
+  background-color: rgb(203, 237, 195);
+  color: black;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.banner-image{
+  width: 100%
+
+}
+
+.nav-bar{
+  background-color: rgb(25, 137, 21);
+}
+
+.logo-div{
+  margin-right: 150px;
+}
+
+.degs-text-div{
+  margin-right: 90px;
+}
+
+.about-container{
+  background-color: blue;
+  width: 100vw;
+  height: 200px;
+  color: white;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-us{
+  padding-top: 70px;
+}
+
+h4{
+  color: rgb(45, 11, 197);
+  margin:0;
+  margin-top: 4px;
+}
+ 
+.course-div{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.course1{
+background-color: rgb(232, 134, 134);
+height: 60px;
+width: 100px;
+padding:10px;
+padding-top: 60px;
+margin-right: 10px;
+border-radius:10px;
+}
+
+
+.course2{
+background-color: rgb(128, 229, 128);
+height: 60px;
+width: 100px;
+padding:10px;
+padding-top: 60px;
+margin-right: 10px;
+border-radius:10px;
+}
+
+
+.course3{
+background-color: rgb(151, 151, 233);
+height: 60px;
+width: 100px;
+padding:10px;
+padding-top: 60px;
+margin-right: 10px;
+border-radius:10px;
+}
+
+
+.course4{
+background-color: rgb(237, 110, 237);
+height: 60px;
+width: 100px;
+padding:10px;
+padding-top: 60px;
+margin-right: 10px;
+border-radius:10px;
+}
+
+.img-galary{
+  display: flex;
+}
+
+.img1{
+  width: 300px;
+  height: 
+  background-color:red;
+}
+
+.marquee{
+  border: 2px solid rgb(214, 209, 209);
+  display: flex;
+  background-color: rgb(219, 235, 91);
+  height: 28px;
+}
+
+.marquee-note{
+  width: 180px;
+  height:28px;
+  background-color: rgb(6, 234, 200);
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.mobile-number{
+  text-align: center;
+  font-size: 2rem;
+  color: blueviolet;
+}
