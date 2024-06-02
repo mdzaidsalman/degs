@@ -40,8 +40,37 @@
 </div>
 
    <div class="course-div">
-   <div class="course1">Basic</div>
-   <div class="course2">Advance</div>
+   <div class="course1">
+    <button type="button" class="collapsible">Basic</button>
+    <div class="content">
+      <p>Microsoft Paint</p>
+      <p>Microsoft Word</p>
+      <p>Microsoft Excel</p>
+      <p>Microsoft PowerPoint</p>
+      <p>Network</p>
+      <p>Internet</p>
+      <p>Basic Hardware</p>
+      <p>Software</p>
+      <p>File Management</p>
+    </div>
+    
+
+
+   </div>
+   <div class="course2">
+    <button type="button" class="collapsible">Advance</button>
+    <div class="content">
+      <p>Microsoft Excel Advance</p>
+      <p>Microsoft Word Advance</p>
+      <p>Microsoft Excel</p>
+      <p>Microsoft PowerPoint Advance</p>
+      <p>HTML</p>
+      <p>CSS</p>
+      <p>Microsoft Access Database</p>
+      <p>Google Form, Gmail etc</p>
+      <p>File Explorer</p>
+    </div>
+   </div>
    <div class="course3">English Typing</div>
    <div class="course4">Hindi Typing</div>
 </div>
@@ -51,6 +80,63 @@
     <p class="about">All Rights Reserved @mdzaidsalman</p>
     <p class="maintained">Maintained by Md Zaid Salman</p>
    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
 
 
 
