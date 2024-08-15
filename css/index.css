@@ -24,21 +24,24 @@ font-weight: lighter;
 
 .nav-container{
   display: flex;
-  justify-content: center;
+  float: left;
 }
 
 li{
-  list-style-type: none;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-right: 10px;
-  padding-left: 10px;
-  background-color: rgb(25, 137, 21);
-  color: white;
+  float: left
 }
 
-li:hover{
-  background-color: rgb(203, 237, 195);
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+li a:hover{
+  background-color: rgb(238, 241, 49);
   color: black;
   cursor: pointer;
   transition: 300ms;
@@ -49,9 +52,14 @@ li:hover{
 
 }
 
-.nav-bar{
-  background-color: rgb(25, 137, 21);
-}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #015ac6;
+  }
+
 
 .logo-div{
   margin-right: 150px;
