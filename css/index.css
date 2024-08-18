@@ -200,3 +200,39 @@ border-radius:10px;
   overflow: hidden;
   background-color: #f1f1f1;
 }
+
+#mySidenav a {
+  position: absolute;
+  left: -80px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#about {
+  top: 270px;
+  background-color: #04AA6D;
+}
+
+#blog {
+  top: 330px;
+  background-color: #2196F3;
+}
+
+#projects {
+  top: 390px;
+  background-color: #f44336;
+}
+
+#contact {
+  top: 450px;
+  background-color: #555
+}
