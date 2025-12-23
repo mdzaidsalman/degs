@@ -1,383 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses </title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="icon" href="Images/jh logo.jpeg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses | DeGS Koderma</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" href="Images/jh logo.jpeg">
 </head>
-<body>
-  <center>
-
-    <div class="title">Government of Jharkhand</div><br>
-
-    
-    
-    <div class="logo-container">
-        <div class="logo-div"> <img src="Images/jh logo.jpeg" alt="Jhakhand Logo" class="jh"></div>
-
-        <div class="degs-text-div"><h1>DeGS KODERMA</h1></div>
-
-        <div class="diditalindia-div"> <img src="Images/Digital India Logo.jpg" alt="DL" class="digital" > </div>
-    </div>
-
-    <div class="marquee">
-        <div class="marquee-note">Notice Board</div>
-        <marquee behavior="" direction="" scrollamount="16">
-        <h4>Welcome to DeGS basic computer training centre. Registration is open, 
-        kindly contact - 7209514258 for admission.</h4></marquee>
-    </div>
-    <br>
-   <ul class="nav-container">
-      <li class="nav-items"><a href="index.html" style="text-decoration: none;">HOME</a></li>
-      <li class="nav-items"> <a href="https://forms.gle/6QWVXZWvkGzx7mqz9" style="text-decoration: none;">REGISTRATION</a></li>
-      <li class="nav-items"> <a href="course.html" style="text-decoration: none;">COURSES</a></li>
-      <li class="nav-items"> <a href="galary.html" style="text-decoration: none;">GALARY</a></li>
-      <li class="nav-items"> <a href="index.html">CAREER</a></li>
-      <li class="nav-items"> <a href="reachus.html" style="text-decoration: none;">REACH-US</a></li>
-  </ul>
-  
-<br>
-<br>
-<br>
-<br>
-<br>
- <!--
-   <div class="course-div">
-   <div class="course1">
-    <button type="button" class="collapsible">Basic</button>
-    <div class="content">
-      <p>Microsoft Paint</p>
-      <p>Microsoft Word</p>
-      <p>Microsoft Excel</p>
-      <p>Microsoft PowerPoint</p>
-      <p>Network</p>
-      <p>Internet</p>
-      <p>Basic Hardware</p>
-      <p>Software</p>
-      <p>File Management</p>
-    </div>
-    
-
-
-   </div>
-   <div class="course2">
-    <button type="button" class="collapsible">Advance</button>
-    <div class="content">
-      <p>Microsoft Excel Advance</p>
-      <p>Microsoft Word Advance</p>
-      <p>Microsoft Excel</p>
-      <p>Microsoft PowerPoint Advance</p>
-      <p>HTML</p>
-      <p>CSS</p>
-      <p>Microsoft Access Database</p>
-      <p>Google Form, Gmail etc</p>
-      <p>File Explorer</p>
-    </div>
-   </div>
-   <div class="course3">English Typing</div>
-   <div class="course4">Hindi Typing</div>
-</div>
--->
 <style>
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #df6c6c;
-  
-  display: inline-block;
-  margin-left: 40px;
-  border-radius: 10px;
-  
-}
-
-
-
-
-li a, .dropbtn {
-  display: inline-block;
-  color: rgb(4, 4, 4);
+  /* COURSES SECTION */
+.courses-section {
+  padding: 2rem;
   text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
 }
 
-li a:hover, .dropdown:hover .dropbtn {
-  background-color: rgb(56, 228, 228);
+.courses-section h2 {
+  margin-bottom: 2rem;
+  color: #015ac6;
+  font-size: 2rem;
 }
 
-li.dropdown {
-  display: inline-block;
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #fbfbfb;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(214, 210, 210, 0.807);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: rgb(0, 0, 0);
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+.course-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
 }
 
-.dropdown-content a:hover {background-color: rgb(80, 243, 243);}
-
-.dropdown:hover .dropdown-content {
-  display: block;
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
+.course-card h3 {
+  margin-bottom: 1rem;
+  color: #df6c6c;
+}
 
-  #mySidenav a {
-    position: absolute;
-    left: -80px;
-    transition: 0.3s;
-    padding: 15px;
-    width: 100px;
-    text-decoration: none;
-    font-size: 20px;
-    color: white;
-    border-radius: 0 5px 5px 0;
-  }
-  
-  #mySidenav a:hover {
-    left: 0;
-  }
-  
-  #about {
-    top: 270px;
-    background-color: #04AA6D;
-  }
-  
-  #blog {
-    top: 330px;
-    background-color: #2196F3;
-  }
-  
-  #projects {
-    top: 390px;
-    background-color: #f44336;
-  }
-  
-  #contact {
-    top: 450px;
-    background-color: #555
-  }
+.course-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.course-card ul li {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+}
+
+.course-card ul li:last-child {
+  border-bottom: none;
+}
   </style>
+  /* COURSES SECTION */
+<body>
 
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-
-<ul>
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Basic</a>
-    <div class="dropdown-content">
-      <a href="#">Microsoft Word</a>
-      <a href="#">Microsoft Excel</a>
-      <a href="#">Microsoft PowerPoint</a>
-      <a href="#">Microsoft Paint</a>
-      <a href="#">Network and Internet</a>
-      <a href="#">File Management</a>
-      <a href="#">Hardware</a>
-      <a href="#">Software</a>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo-container">
+      <img src="Images/jh logo.jpeg" alt="Jharkhand Logo" class="jh">
+      <h1>DeGS KODERMA</h1>
+      <img src="Images/Digital India Logo.jpg" alt="Digital India Logo" class="digital">
     </div>
-  </li>
-</ul>
+  </header>
 
-<ul>
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Advance</a>
-    <div class="dropdown-content">
-      <a href="#">Advance Microsoft Word</a>
-      <a href="#">Advance Microsoft Excel</a>
-      <a href="#">Advance Microsoft Access Database</a>
-      <a href="#">Advance Microsoft PowerPoint</a>
-      <a href="#">HTML</a>
-      <a href="#">CSS (Cascading Style Sheet)</a>
-      <a href="#">Advance File Explorer</a>
-      <a href="#">Google Forms</a>
-      <a href="#">Cyber Security</a>
+  <!-- NOTICE BOARD -->
+  <section class="notice-board">
+    <span class="notice-label">Notice Board</span>
+    <div class="scroll-text">
+      <p>Welcome to DeGS basic computer training centre. Registration is open — contact 7209514258 for admission.</p>
     </div>
-  </li>
-</ul>
+  </section>
 
-<ul>
-<li class="dropdown">
-  <a href="javascript:void(0)" class="dropbtn">English Typing</a>
-  <div class="dropdown-content">
-    <a href="#">Basics of Typing</a>
-    <a href="#">Positioning of Fingers</a>
-    <a href="#">Building Muscle Memory</a>
-    <a href="#">Practicing Shift Keys</a>
-    <a href="#">Practicing Number Row</a>
-    <a href="#">Builiding Speed</a>
-</li>
-</ul>
-<ul>
-<li class="dropdown">
-  <a href="javascript:void(0)" class="dropbtn">Hindi Typing</a>
-  <div class="dropdown-content">
-    <a href="#">Basics of Typing</a>
-    <a href="#">Positioning of Fingers</a>
-    <a href="#">Building Muscle Memory</a>
-    <a href="#">Practicing Extra Code</a>
-    <a href="#">Practicing Number Row</a>
-    <a href="#">Builiding Speed</a>
-</li>
-</ul>
-<br>
-<br>
-<ul>
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Basic Python</a>
-    <div class="dropdown-content">
-      <a href="#">Fundamentals of Programming</a>
-      <a href="#">Basic syntax</a>
-      <a href="#">Getting Output</a>
-      <a href="#">Building First Program</a>
-      <a href="#">Injecting Python in Html webpage</a>
-      <a href="#">Making Project and Final Exam</a>
-  </li>
-  </ul>
-
-  <ul>
-    <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">DBMS (MySQL)</a>
-      <div class="dropdown-content">
-        <a href="#">Introduction to DBMS</a>
-        <a href="#">Creating Database and Tables</a>
-        <a href="#">Inserting Data into Table</a>
-        <a href="#">Altering of Table</a>
-        <a href="#">Query Basics</a>
-        <a href="#">Relationships, and Keys</a>
-    </li>
-    </ul>
-
-
+  <!-- NAVIGATION -->
+  <nav class="nav-container">
     <ul>
-      <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">Advance Data Entry</a>
-        <div class="dropdown-content">
-          <a href="#">Basic Data Entry in Excel</a>
-          <a href="#">Advance Data Entry in Excel</a>
-          <a href="#">Building Forms in Excel</a>
-          <a href="#">Data Entry in Ms-Access</a>
-          <a href="#">Data Entry in Google Sheets</a>
-          <a href="#">Advance Features - Data Validation</a>
-      </li>
-      </ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="https://forms.gle/6QWVXZWvkGzx7mqz9">Registration</a></li>
+      <li><a href="course.html" class="active">Courses</a></li>
+      <li><a href="galary.html">Gallery</a></li>
+      <li><a href="career.html">Career</a></li>
+      <li><a href="reachus.html">Reach Us</a></li>
+    </ul>
+  </nav>
 
-<br>
-<br>
-<br>
-<br>
-   <div class="about-container">
-    <p class="about-us">About Us</p>
-    <p class="about">All Rights Reserved @mdzaidsalman</p>
-    <p class="maintained">Maintained by Md Zaid Salman</p>
-   </div>
+  <!-- COURSES SECTION -->
+  <main class="courses-section">
+    <h2>Our Courses</h2>
+    <div class="courses-grid">
 
-<br>
+      <div class="course-card">
+        <h3>Basic</h3>
+        <ul>
+          <li>Microsoft Word</li>
+          <li>Microsoft Excel</li>
+          <li>Microsoft PowerPoint</li>
+          <li>Microsoft Paint</li>
+          <li>Network & Internet</li>
+          <li>File Management</li>
+          <li>Hardware & Software</li>
+        </ul>
+      </div>
 
-   <div id="mySidenav" class="sidenav">
-    <a href="index.html" id="about">About</a>
-    <a href="https://forms.gle/6QWVXZWvkGzx7mqz9" id="blog">Registration</a>
-    <a href="galary.html" id="projects">Galary</a>
-    <li class="nav-items"> <a href="career.html">CAREER</a></li>
-    <a href="reachus.html" id="contact">Contact</a>
-  </div>
-  
+      <div class="course-card">
+        <h3>Advance</h3>
+        <ul>
+          <li>Advanced Microsoft Word</li>
+          <li>Advanced Microsoft Excel</li>
+          <li>Advanced PowerPoint</li>
+          <li>Microsoft Access Database</li>
+          <li>HTML & CSS</li>
+          <li>Google Forms</li>
+          <li>Cyber Security</li>
+        </ul>
+      </div>
 
+      <div class="course-card">
+        <h3>English Typing</h3>
+        <ul>
+          <li>Basics of Typing</li>
+          <li>Finger Positioning</li>
+          <li>Muscle Memory</li>
+          <li>Shift Keys Practice</li>
+          <li>Number Row Practice</li>
+          <li>Speed Building</li>
+        </ul>
+      </div>
 
-  </center>
+      <div class="course-card">
+        <h3>Hindi Typing</h3>
+        <ul>
+          <li>Basics of Typing</li>
+          <li>Finger Positioning</li>
+          <li>Muscle Memory</li>
+          <li>Extra Code Practice</li>
+          <li>Number Row Practice</li>
+          <li>Speed Building</li>
+        </ul>
+      </div>
 
+      <div class="course-card">
+        <h3>Basic Python</h3>
+        <ul>
+          <li>Programming Fundamentals</li>
+          <li>Basic Syntax</li>
+          <li>Getting Output</li>
+          <li>First Program</li>
+          <li>Python in HTML</li>
+          <li>Project & Final Exam</li>
+        </ul>
+      </div>
 
+      <div class="course-card">
+        <h3>DBMS (MySQL)</h3>
+        <ul>
+          <li>Introduction to DBMS</li>
+          <li>Creating Databases & Tables</li>
+          <li>Inserting Data</li>
+          <li>Altering Tables</li>
+          <li>Query Basics</li>
+          <li>Relationships & Keys</li>
+        </ul>
+      </div>
 
+      <div class="course-card">
+        <h3>Advanced Data Entry</h3>
+        <ul>
+          <li>Excel Data Entry</li>
+          <li>Advanced Excel Features</li>
+          <li>Forms in Excel</li>
+          <li>MS Access Data Entry</li>
+          <li>Google Sheets</li>
+          <li>Data Validation</li>
+        </ul>
+      </div>
 
+    </div>
+  </main>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2026 DeGS Koderma | Designed & Maintained by Md Zaid Salman</p>
+  </footer>
 
 </body>
 </html>

@@ -1,219 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses </title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="icon" href="Images/jh logo.jpeg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galary | DeGS Koderma</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" href="Images/jh logo.jpeg">
 </head>
+<style>
+  /* GALLERY SECTION */
+/* GALLERY SECTION */
+.gallery-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  margin-bottom: 2rem;
+  color: #015ac6;
+  font-size: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item figcaption {
+  padding: 1rem;
+  font-size: 0.95rem;
+  background: #f9f9f9;
+  color: #333;
+}
+</style>
 <body>
 
-    <div class="title">Government of Jharkhand</div><br>
-
-    
-    
+  <!-- HEADER -->
+  <header class="site-header">
     <div class="logo-container">
-        <div class="logo-div"> <img src="Images/jh logo.jpeg" alt="Jhakhand Logo" class="jh"></div>
-
-        <div class="degs-text-div"><h1>DeGS KODERMA</h1></div>
-
-        <div class="diditalindia-div"> <img src="Images/Digital India Logo.jpg" alt="DL" class="digital" > </div>
+      <img src="Images/jh logo.jpeg" alt="Jharkhand Logo" class="jh">
+      <h1>DeGS KODERMA</h1>
+      <img src="Images/Digital India Logo.jpg" alt="Digital India Logo" class="digital">
     </div>
+  </header>
 
-    <div class="marquee">
-        <div class="marquee-note">Notice Board</div>
-        <marquee behavior="" direction="" scrollamount="16">
-        <h4>Welcome to DeGS basic computer training centre. Registration is open, 
-        kindly contact - 7209514258 for admission.</h4></marquee>
+  <!-- NOTICE BOARD -->
+  <section class="notice-board">
+    <span class="notice-label">Notice Board</span>
+    <div class="scroll-text">
+      <p>Welcome to DeGS basic computer training centre. Registration is open — contact 7209514258 for admission.</p>
     </div>
-    <ul class="nav-container">
-      <li class="nav-items"><a href="index.html" style="text-decoration: none;">HOME</a></li>
-      <li class="nav-items"> <a href="https://forms.gle/6QWVXZWvkGzx7mqz9" style="text-decoration: none;">REGISTRATION</a></li>
-      <li class="nav-items"> <a href="course.html" style="text-decoration: none;">COURSES</a></li>
-      <li class="nav-items"> <a href="galary.html" style="text-decoration: none;">GALARY</a></li>
-      <li class="nav-items"> <a href="index.html">CAREER</a></li>
-      <li class="nav-items"> <a href="career.html">CAREER</a></li>
-      <li class="nav-items"> <a href="reachus.html" style="text-decoration: none;">REACH-US</a></li>
-  </ul>
+  </section>
 
-   <!--<div class="img-galary">
-   <img src="Images/DeGS/20230527084609_IMG_1735.JPG" class="img1">
-   <img src="Images/DeGS/FB_IMG_1649948076906.jpg" class="img1">
-   <img src="Images/DeGS/FB_IMG_1650556126279.jpg" class="img1">
-   <img src="Images/DeGS/FB_IMG_1653930245039.jpg" class="img1">
-   <img src="Images/DeGS/IMG-20220414-WA0000.jpg" class="img1">  
-</div>
+  <!-- NAVIGATION -->
+  <nav class="nav-container">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="https://forms.gle/6QWVXZWvkGzx7mqz9">Registration</a></li>
+      <li><a href="course.html" class="active">Courses</a></li>
+      <li><a href="galary.html">Gallery</a></li>
+      <li><a href="career.html">Career</a></li>
+      <li><a href="reachus.html">Reach Us</a></li>
+    </ul>
+  </nav>
 
-<div class="img-galary">
-    <img src="Images/DeGS/IMG-20220428-WA0004.jpg" class="img1">
-   <img src="Images/DeGS/IMG-20220508-WA0000.jpg" class="img1">
-   <img src="Images/DeGS/IMG-20220604-WA0003.jpg" class="img1">
-   <img src="Images/DeGS/IMG-20220625-WA0000.jpg" class="img1">
-   <img src="Images/DeGS/IMG_4889.JPG" class="img1">
-   <img src="Images/DeGS/IMG_4884.JPG" class="img1">
-</div> -->
+  <!-- IMAGE GALLERY -->
+  <main class="gallery-section">
+    <h2>Image Gallery</h2>
+    <div class="gallery-grid">
+      <figure class="gallery-item">
+        <img src="Images/DeGS/20230527084609_IMG_1735.JPG" alt="Group Picture with DC Sir, DFO Sir, DDC Sir, SDM Sir, Kamal Kishore Sir, EDM Sir">
+        <figcaption>Group Picture with DC Sir, DFO Sir, DDC Sir, SDM Sir, Kamal Kishore Sir, EDM Sir</figcaption>
+      </figure>
 
-<style>
-    div.gallery {
-      border: 1px solid #ccc;
-    }
-    
-    div.gallery:hover {
-      border: 1px solid #777;
-    }
-    
-    div.gallery img {
-      width: 100%;
-      height: auto;
-    }
-    
-    div.desc {
-      padding: 15px;
-      text-align: center;
-    }
-    
-    * {
-      box-sizing: border-box;
-    }
-    
-    .responsive {
-      padding: 0 6px;
-      float: left;
-      width: 24.99999%;
-    }
-    
-    @media only screen and (max-width: 700px) {
-      .responsive {
-        width: 49.99999%;
-        margin: 6px 0;
-      }
-    }
-    
-    @media only screen and (max-width: 500px) {
-      .responsive {
-        width: 100%;
-      }
-    }
-    
-    .clearfix:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
+      <figure class="gallery-item">
+        <img src="Images/DeGS/FB_IMG_1649948076906.jpg" alt="Surprise Inspection By DC Sir And SDM Sir">
+        <figcaption>Surprise Inspection By DC Sir And SDM Sir</figcaption>
+      </figure>
 
-    h2{
-      text-align: center;
-    }
-    </style>
-    
-    
-           <h2>Image Gallery</h2>
-    
+      <figure class="gallery-item">
+        <img src="Images/DeGS/IMG-20230521-WA0015.jpg" alt="Visit of Trainee Civil Service officers">
+        <figcaption>Visit of Trainee Civil Service officers</figcaption>
+      </figure>
 
-    <br>
-    <div class="responsive">
-      <div class="gallery">
-        <a target="_blank" href="Images/DeGS/20230527084609_IMG_1735.JPG">
-          <img src="Images/DeGS/20230527084609_IMG_1735.JPG" alt="Cinque Terre" width="600" height="400">
-        </a>
-        <div class="desc">Group Picture with DC Sir, DFO Sir, DDC Sir, SDM Sir, Kamal Kishore Sir, EDM Sir</div>
-      </div>
+      <figure class="gallery-item">
+        <img src="Images/DeGS/IMG_4889.JPG" alt="Certificate Distribution Programme">
+        <figcaption>Certificate Distribution Programme</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="Images/DeGS/IMG-20221012-WA0040.jpg" alt="Visit of CO Sir and Trainee IAS Officers">
+        <figcaption>Visit of CO Sir and Trainee IAS Officers</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="Images/DeGS/IMG_20230812_081017.jpg" alt="Examination Hall. Final Examination">
+        <figcaption>Examination Hall. Final Examination</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="Images/DeGS/IMG-20220626-WA0010.jpg" alt="Students report Update. Daily Report">
+        <figcaption>Students report Update. Daily Report</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="Images/DeGS/IMG-20220508-WA0000.jpg" alt="Quick and active Guidance from DC Sir">
+        <figcaption>Quick and active Guidance from DC Sir</figcaption>
+      </figure>
     </div>
-    
-    
-    <div class="responsive">
-      <div class="gallery">
-        <a target="_blank" href="Images/DeGS/FB_IMG_1649948076906.jpg">
-          <img src="Images/DeGS/FB_IMG_1649948076906.jpg" alt="Forest" width="600" height="400">
-        </a>
-        <div class="desc">Surprise Inspection By DC Sir And SDM Sir</div>
-      </div>
-    </div>
-    
-    <div class="responsive">
-      <div class="gallery">
-        <a target="_blank" href="Images/DeGS/IMG-20230521-WA0015.jpg">
-          <img src="Images/DeGS/IMG-20230521-WA0015.jpg" alt="Northern Lights" width="600" height="400">
-        </a>
-        <div class="desc">Visit of Trainee Civil Service officers</div>
-      </div>
-    </div>
+  </main>
 
-
-    
-    <div class="responsive">
-      <div class="gallery">
-        <a target="_blank" href="Images/DeGS/IMG_4889.JPG">
-          <img src="Images/DeGS/IMG_4889.JPG" alt="Mountains" width="600" height="400">
-        </a>
-        <div class="desc">Certificate Distribution Programme</div>
-      </div>
-    </div>
-
-    <div class="responsive">
-        <div class="gallery">
-          <a target="_blank" href="Images/DeGS/IMG-20230521-WA0015.jpg">
-            <img src="Images/DeGS/IMG-20221012-WA0040.jpg" alt="Northern Lights" width="600" height="400">
-          </a>
-          <div class="desc">Visit of CO Sir and Trainee IAS Officers</div>
-        </div>
-      </div>
-
-      <div class="responsive">
-        <div class="gallery">
-          <a target="_blank" href="Images/DeGS/IMG_20230812_081017.jpg">
-            <img src="Images/DeGS/IMG_20230812_081017.jpg" alt="Northern Lights" width="600" height="400">
-          </a>
-          <div class="desc">Examination Hall. Final Examination</div>
-        </div>
-      </div>
-
-      <div class="responsive">
-        <div class="gallery">
-          <a target="_blank" href="Images/DeGS/IMG-20220626-WA0010.jpg">
-            <img src="Images/DeGS/IMG-20220626-WA0010.jpg" alt="Northern Lights" width="600" height="400">
-          </a>
-          <div class="desc">Students report Update. Daily Report</div>
-        </div>
-      </div>
-
-      <div class="responsive">
-        <div class="gallery">
-          <a target="_blank" href="Images/DeGS/IMG-20220508-WA0000.jpg">
-            <img src="Images/DeGS/IMG-20220508-WA0000.jpg" alt="Northern Lights" width="600" height="400">
-          </a>
-          <div class="desc">Quick and active Guidance from DC Sir</div>
-        </div>
-      </div>
-    
-    <div class="clearfix"></div>
-    
-    <div style="padding:6px;">
-      <p></p>
-      <p>All rights reserved DeGS Telaiya Block .</p>
-    </div>
-
-   <div class="about-container">
-    <p class="about-us">About Us</p>
-    <p class="about">All Rights Reserved @mdzaidsalman</p>
-    <p class="maintained">Maintained by Md Zaid Salman</p>
-   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2026 DeGS Koderma | Designed & Maintained by Md Zaid Salman</p>
+  </footer>
 
 </body>
 </html>

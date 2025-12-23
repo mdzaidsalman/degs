@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notices | DeGS Koderma</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" href="Images/jh logo.jpeg">
+</head>
+<style>
+  /* NOTICE SECTION */
+.notice-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.notice-section h2 {
+  margin-bottom: 2rem;
+  color: #015ac6;
+  font-size: 2rem;
+}
+
+.notice-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.notice-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.notice-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.notice-card h3 {
+  margin-bottom: 0.5rem;
+  color: #df6c6c;
+}
+
+.notice-card p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.notice-link {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  background: #015ac6;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.notice-link:hover {
+  background: #56e4e4;
+  color: black;
+}
+</style>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo-container">
+      <img src="Images/jh logo.jpeg" alt="Jharkhand Logo" class="jh">
+      <h1>DeGS KODERMA</h1>
+      <img src="Images/Digital India Logo.jpg" alt="Digital India Logo" class="digital">
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="nav-container">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="course.html">Courses</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="career.html">Career</a></li>
+      <li><a href="reachus.html">Reach Us</a></li>
+      <li><a href="notice.html" class="active">Notices</a></li>
+    </ul>
+  </nav>
+
+  <!-- NOTICE SECTION -->
+  <main class="notice-section">
+    <h2>Latest Notices & Updates</h2>
+    <div class="notice-list">
+
+      <div class="notice-card">
+        <h3>🎉 New Batch Registration</h3>
+        <p>Registration is open for January 2026 batch. Contact 7209514258 for admission.</p>
+        <a href="Images/DeGS/RegistrationForm.pdf" target="_blank" class="notice-link">📄 View Registration PDF</a>
+      </div>
+
+      <div class="notice-card">
+        <h3>📢 Examination Schedule</h3>
+        <p>Final examination for Basic Computer Training will be held in February 2026.</p>
+        <a href="Images/DeGS/ExamSchedule.pdf" target="_blank" class="notice-link">📄 Download Exam Schedule</a>
+      </div>
+
+      <div class="notice-card">
+        <h3>📑 Internship Opportunity</h3>
+        <p>Applications are invited for internship at DeGS Koderma. Apply before 15th January 2026.</p>
+        <a href="Images/DeGS/InternshipNotice.pdf" target="_blank" class="notice-link">📄 View Internship Notice</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2026 DeGS Koderma | Designed & Maintained by Md Zaid Salman</p>
+  </footer>
+
+</body>
+</html>
