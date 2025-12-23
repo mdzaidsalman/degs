@@ -2,68 +2,372 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DeGS Koderma</title>
-  <link rel="stylesheet" href="css/index.css">
   <link rel="icon" href="Images/jh logo.jpeg">
+  <style>
+    /* Base */
+    :root{
+      --primary:#015ac6;
+      --accent:#df6c6c;
+      --bg:#f9f9f9;
+      --text:#333;
+      --muted:#777;
+      --card:#fff;
+      --highlight:#56e4e4;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.6;background:var(--bg);color:var(--text)}
+    img{max-width:100%;display:block}
+
+    /* Header */
+    .site-header{background:var(--primary);color:#fff;padding:1rem 0;text-align:center}
+    .logo-container{display:flex;justify-content:center;align-items:center;gap:2rem;flex-wrap:wrap}
+    .jh{width:80px}
+    .digital{width:100px}
+    .brand h1{margin:0;font-size:1.8rem}
+
+    /* Notice ticker */
+    .notice-board{display:flex;align-items:center;background:#f5f6ef;border-top:2px solid #ccc;border-bottom:2px solid #ccc;overflow:hidden}
+    .notice-label{
+      width:180px;text-align:center;font-weight:bold;font-size:1.05rem;color:#fff;border-radius:6px;padding:.5rem .75rem;
+      animation:colorChange 3s infinite alternate;
+    }
+    @keyframes colorChange{
+      0%{background:#b33232}50%{background:#786828}100%{background:#4caf50}
+    }
+    .scroll-text{flex:1;white-space:nowrap;overflow:hidden}
+    .scroll-text p{display:inline-block;padding-left:100%;margin:0;color:#2d0bc5;animation:scroll-left 12s linear infinite}
+    @keyframes scroll-left{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+
+    /* Nav */
+    .nav-container{background:var(--accent);display:flex;justify-content:center;gap:.25rem;flex-wrap:wrap;position:sticky;top:0;z-index:20}
+    .nav-container a{
+      color:#ffffff;text-decoration:none;padding:.9rem 1rem;border-radius:8px;display:block;transition:background .25s,color .25s
+    }
+    .nav-container a:hover,.nav-container a.active{background:var(--highlight);color:#784040}
+
+    /* Sections */
+    section{padding:2rem 1rem;max-width:1100px;margin:0 auto}
+    section h2{margin:0 0 1rem;color:var(--primary);font-size:1.8rem;text-align:center}
+
+    /* Banner */
+    .banner{border-radius:10px;max-height:420px;object-fit:cover;margin:1rem auto}
+
+    /* Cards & grids */
+    .grid{display:grid;gap:1.5rem}
+    @media(min-width:700px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-4{grid-template-columns:repeat(4,1fr)}}
+    .card{
+      background:var(--card);border-radius:12px;padding:1.2rem;box-shadow:0 4px 12px rgba(0,0,0,.08);
+      transition:transform .25s,box-shadow .25s;text-align:left
+    }
+    .card:hover{transform:translateY(-4px);box-shadow:0 8px 18px rgba(0,0,0,.12)}
+    .card h3{margin:.25rem 0 1rem;color:var(--accent);font-size:1.15rem}
+    .card p{margin:.4rem 0;color:var(--text)}
+    .card small{color:var(--muted)}
+    .card ul{list-style:none;margin:0;padding:0}
+    .card ul li{padding:.35rem 0;border-bottom:1px solid #eee;font-size:.95rem}
+    .card ul li:last-child{border-bottom:none}
+
+    /* Gallery */
+    .gallery-grid{display:grid;gap:1.2rem}
+    @media(min-width:680px){.gallery-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(min-width:980px){.gallery-grid{grid-template-columns:repeat(4,1fr)}}
+    .gallery-item{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.08);transition:transform .25s}
+    .gallery-item:hover{transform:scale(1.02)}
+    .gallery-item img{width:100%;height:200px;object-fit:cover}
+    .gallery-item figcaption{padding:.75rem;background:#fafafa;font-size:.92rem}
+
+    /* Notice list */
+    .notice-list{display:grid;gap:1.2rem}
+    @media(min-width:720px){.notice-list{grid-template-columns:repeat(3,1fr)}}
+    .notice-link{
+      display:inline-block;margin-top:.6rem;padding:.6rem .9rem;background:var(--primary);color:#fff;text-decoration:none;border-radius:8px;
+      transition:background .25s,color .25s
+    }
+    .notice-link:hover{background:var(--highlight);color:#000}
+
+    /* Reach Us */
+    .reach-grid{display:grid;gap:1.2rem}
+    @media(min-width:720px){.reach-grid{grid-template-columns:repeat(3,1fr)}}
+    .reach-card h4{margin:.25rem 0;color:#222}
+    .reach-phone{font-weight:bold}
+
+    /* Registration */
+    .register-wrap{max-width:800px;margin:0 auto}
+    .btn{
+      display:inline-block;padding:.8rem 1.1rem;background:var(--accent);color:#fff;text-decoration:none;border-radius:8px;
+      transition:background .25s,color .25s
+    }
+    .btn:hover{background:var(--highlight);color:#000}
+    .pdf-btn{background:var(--primary)}
+    .pdf-btn:hover{background:var(--highlight);color:#000}
+
+    /* Footer */
+    .site-footer{background:#222;color:#fff;text-align:center;padding:1rem;margin-top:2rem}
+    /* Feedback Form */
+.feedback-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.feedback-form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.feedback-form button {
+  margin-top: 1rem;
+}
+  </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- Header -->
   <header class="site-header">
     <div class="logo-container">
       <img src="Images/jh logo.jpeg" alt="Jharkhand Logo" class="jh">
-      <h1>DeGS KODERMA</h1>
+      <div class="brand"><h1>DeGS KODERMA</h1><small>Government of Jharkhand</small></div>
       <img src="Images/Digital India Logo.jpg" alt="Digital India Logo" class="digital">
     </div>
   </header>
 
-  <!-- NOTICE BOARD -->
-  <section class="notice-board">
+  <!-- Notice ticker -->
+  <section class="notice-board" aria-label="Notice ticker">
     <span class="notice-label">Notice Board</span>
     <div class="scroll-text">
-      <p><strong>HAPPY NEW YEAR 2026</strong> — Welcome to DeGS basic computer training centre. Registration is open, kindly contact 7209514258 for admission.</p>
+      <p><strong>HAPPY NEW YEAR 2026</strong> — Registration open. Contact 7209514258 for admission.</p>
     </div>
   </section>
 
-  <!-- NAVIGATION -->
-  <nav class="nav-container">
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="https://forms.gle/6QWVXZWvkGzx7mqz9">Registration</a></li>
-      <li><a href="course.html">Courses</a></li>
-      <li><a href="galary.html">Gallery</a></li>
-      <li><a href="career.html">Career</a></li>
-      <li><a href="notice.html" class="active">Notices</a></li>
-      <li><a href="reachus.html">Reach Us</a></li>
-
-    </ul>
+  <!-- Navigation -->
+  <nav class="nav-container" aria-label="Main">
+    <a href="#home" class="active">Home</a>
+    <a href="#courses">Courses</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#notices">Notices</a>
+    <a href="#reachus">Reach Us</a>
+    <a href="#registration">Registration</a>
   </nav>
 
-  <!-- MAIN BANNER -->
-  <main>
-    <img src="Images/DeGS/Team DeGS.jpg" alt="Team DeGS" class="banner-image">
+  <!-- Home -->
+  <section id="home">
+    <h2>Welcome to DeGS Koderma</h2>
+    <p>Digital empowerment and professional computer training under the Government of Jharkhand.</p>
+    <img class="banner" src="Images/DeGS/Team DeGS.jpg" alt="Team DeGS">
+  </section>
 
-    <!-- ABOUT -->
-    <section class="about-container">
-      <h2>About Us</h2>
-      <p>All Rights Reserved © Md Zaid Salman</p>
-      <p>Maintained by Md Zaid Salman</p>
-    </section>
-  </main>
+  <!-- Courses -->
+  <section id="courses">
+    <h2>Our Courses</h2>
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>Basic</h3>
+        <ul>
+          <li>Microsoft Word</li><li>Microsoft Excel</li><li>PowerPoint</li>
+          <li>Paint</li><li>Network & Internet</li><li>File Management</li>
+          <li>Hardware & Software</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Advance</h3>
+        <ul>
+          <li>Advanced Word</li><li>Advanced Excel</li><li>Advanced PowerPoint</li>
+          <li>Access Database</li><li>HTML & CSS</li><li>Google Forms</li><li>Cyber Security</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Typing</h3>
+        <ul>
+          <li>English Typing</li><li>Hindi Typing</li>
+          <li>Finger Positioning</li><li>Muscle Memory</li><li>Speed Building</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Basic Python</h3>
+        <ul>
+          <li>Programming Fundamentals</li><li>Syntax & Output</li><li>First Program</li>
+          <li>Python in HTML</li><li>Project & Final Exam</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>DBMS (MySQL)</h3>
+        <ul>
+          <li>Intro to DBMS</li><li>Create DB & Tables</li><li>Insert & Alter</li>
+          <li>Query Basics</li><li>Relationships & Keys</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Advanced Data Entry</h3>
+        <ul>
+          <li>Excel Data Entry</li><li>Advanced Excel Features</li><li>Forms in Excel</li>
+          <li>MS Access Data Entry</li><li>Google Sheets</li><li>Data Validation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  <!-- SIDE NAV -->
-  <aside id="mySidenav" class="sidenav">
-    <a href="index.html" id="about">About</a>
-    <a href="https://forms.gle/6QWVXZWvkGzx7mqz9" id="blog">Registration</a>
-    <a href="gallery.html" id="projects">Gallery</a>
-    <a href="reachus.html" id="contact">Contact</a>
-  </aside>
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>Image Gallery</h2>
+    <div class="gallery-grid">
+      <figure class="gallery-item">
+        <img src="Images/DeGS/20230527084609_IMG_1735.JPG" alt="Group Picture with DC, DFO, DDC, SDM, Kamal Kishore, EDM">
+        <figcaption>Group with DC, DFO, DDC, SDM, Kamal Kishore, EDM</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="Images/DeGS/FB_IMG_1649948076906.jpg" alt="Surprise Inspection">
+        <figcaption>Surprise Inspection by DC & SDM</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="Images/DeGS/IMG-20230521-WA0015.jpg" alt="Trainee Civil Service Officers visit">
+        <figcaption>Visit of Trainee Civil Service Officers</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="Images/DeGS/IMG_4889.JPG" alt="Certificate Distribution">
+        <figcaption>Certificate Distribution Programme</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="Images/DeGS/IMG-20221012-WA0040.jpg" alt="CO & Trainee IAS visit">
+        <figcaption>Visit of CO & Trainee IAS Officers</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="Images/DeGS/IMG_20230812_081017.jpg" alt="Final Examination Hall">
+        <figcaption>Final Examination Hall</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="Images/DeGS/IMG-20220626-WA0010.jpg" alt="Student daily report">
+        <figcaption>Students Report Update</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="Images/DeGS/IMG-20220508-WA0000.jpg" alt="Guidance from DC">
+        <figcaption>Guidance from DC</figcaption>
+      </figure>
+    </div>
+  </section>
 
-  <!-- FOOTER -->
+  <!-- Notices -->
+  <section id="notices">
+    <h2>Latest Notices & Updates</h2>
+    <div class="notice-list">
+      <div class="card">
+        <h3>🎉 New Batch Registration</h3>
+        <p>Registration open for January 2026 batch. Contact 7209514258 for admission.</p>
+        <a class="notice-link" href="Images/DeGS/RegistrationForm.pdf" target="_blank">📄 View Registration PDF</a>
+      </div>
+      <div class="card">
+        <h3>📢 Examination Schedule</h3>
+        <p>Final examinations for Basic Computer Training will be held in February 2026.</p>
+        <a class="notice-link" href="Images/DeGS/ExamSchedule.pdf" target="_blank">📄 Download Exam Schedule</a>
+      </div>
+      <div class="card">
+        <h3>📑 Hindi Typing Codes</h3>
+        <p>Use this Pdf file to learn Hindi typing. And improve speed.</p>
+        <a href="Documents/Typing Kruti Dev.pdf" target="_blank" class="notice-link">📄 Download / View Code Pdf</a>
+      </div>
+      <div class="card">
+        <h3>📑 Nielit CCC Syllabus</h3>
+        <p>This PDF contains Nielit CCC Syllabus. Use this PDF to prepare for the exam.</p>
+        <a href="Documents/BCC.pdf" target="_blank" class="notice-link">📄 Download / View Syllabus</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reach Us -->
+  <section id="reachus">
+    <h2>Reach Us</h2>
+    <div class="reach-grid">
+      <div class="card reach-card">
+        <h4>DC Koderma</h4>
+        <p>Rituraj</p>
+        <p class="reach-phone">📞 9934935997</p>
+      </div>
+      <div class="card reach-card">
+        <h4>DDC Koderma</h4>
+        <p>Sri Rituraj (I.A.S)</p>
+        <p class="reach-phone">📞 9431142461</p>
+      </div>
+      <div class="card reach-card">
+        <h4>SDM Koderma</h4>
+        <p>Mrs. Riya Singh (I.A.S)</p>
+        <p class="reach-phone">📞 9334965707</p>
+      </div>
+      <div class="card reach-card">
+        <h4>E-District Manager</h4>
+        <p>Mr. Rajdeo Mahto (EDM Koderma)</p>
+        <p class="reach-phone">📞 7004905714</p>
+      </div>
+      <div class="card reach-card">
+        <h4>Centre Co-Ordinator</h4>
+        <p><strong>Md. Zaid Salman</strong></p>
+        <p class="reach-phone">📞 7209514258</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration -->
+  <section id="registration">
+    <h2>Registration</h2>
+    <div class="register-wrap">
+      <p>Join the upcoming batch and start your digital journey with DeGS Koderma.</p>
+      <p>
+        <a class="btn" href="https://forms.gle/6QWVXZWvkGzx7mqz9" target="_blank">📝 Fill Registration Form</a>
+        <a class="btn pdf-btn" href="Images/DeGS/SQL.pdf" target="_blank">📄 Latest Opening PDF</a>
+      </p>
+      <small>For assistance, call the Centre Co-Ordinator at 7209514258.</small>
+    </div>
+  </section>
+
+    <!-- Feedback -->
+  <section id="feedback">
+    <h2>Send Us Your Feedback</h2>
+    <p>We’d love to hear your queries, suggestions, or feedback.</p>
+    <form class="feedback-form" action="https://formspree.io/f/mrezrajk" method="POST">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="_replyto" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message / Query</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn">📩 Submit Feedback</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
   <footer class="site-footer">
     <p>© 2026 DeGS Koderma | Designed & Maintained by Md Zaid Salman</p>
   </footer>
-
 </body>
 </html>
